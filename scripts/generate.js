@@ -1,9 +1,16 @@
 const fs = require('fs');
+const path = require('path');
 const yaml = require('yaml');
 
-const data = yaml.parse(fs.readFileSync('data.yaml', 'utf8'));
+const fileContent = fs.readFileSync('data.yaml', 'utf8');
+const data = yaml.parse(fileContent) || { sites: [] };
+
+if (!data.sites) data.sites = [];
 
 data.sites.forEach(site => {
+  const dir = path.join('public', site.name);
+  fs.mkdirSync(dir, { recursive: true });
+  
   let html;
   
   if (site.ip) {
@@ -42,5 +49,5 @@ data.sites.forEach(site => {
 </html>`;
   }
   
-  fs.writeFileSync(`public/${site.name}/index.html`, html, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'index.html'), html);
 });
