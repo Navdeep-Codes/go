@@ -17,3 +17,6 @@ sites:
   - name: x
     url: https://x.com/404Navdeep/
     ip: true
+  - name: site
+    url: https://navdeep.online/
+    ip: true
