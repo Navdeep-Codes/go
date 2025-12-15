@@ -1,16 +1,19 @@
 sites:
   - name: example
-    url: https://example.com
+    url: https://example.com/
     ip: true
   - name: ig
     url: https://www.instagram.com/404navdeep/
     ip: true
   - name: yt
-    url: https://www.youtube.com/@404Navdeep
+    url: https://www.youtube.com/@404Navdeep/
     ip: true
   - name: blog
-    url: https://navdeep.online/blog
+    url: https://navdeep.online/blog/
     ip: true
   - name: github
-    url: https://github.com/404Navdeep
+    url: https://github.com/404Navdeep/
+    ip: true
+  - name: x
+    url: https://x.com/404Navdeep/
     ip: true
